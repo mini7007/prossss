@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hug Day 🫠</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        #background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/images/Brown\ Autumn\ Photo\ Collage.png') center/cover no-repeat;
+            z-index: -1;
+        }
+
+        #quote-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #quote {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #quote-author {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="background-container"></div>
+    
+    <div id="quote-container">
+        <div id="quote">
+            "Loading..."
+        </div>
+        <div id="quote-author">
+            - Motu👻❤️
+        </div>
+    </div>
+
+    <script>
+        const quotes = [
+            "Embracing you feels like home.",
+            "Our hugs speak the language of love.",
+            "In your arms, I find solace and joy.",
+            "Every hug is a silent 'I love you'.",
+            "Time spent in your embrace is time well spent."
+        ];
+
+        let currentIndex = 0;
+
+        function updateQuote() {
+            // Display the next quote
+            document.getElementById('quote').innerText = `"${quotes[currentIndex]}"`;
+
+            // Move to the next quote (loop back to the first quote if at the end)
+            currentIndex = (currentIndex + 1) % quotes.length;
+        }
+
+        // Initial quote display
+        updateQuote();
+
+        // Update the quote every 5 seconds (adjust the time as needed)
+        setInterval(updateQuote, 5000);
+    </script>
+</body>
+</html>
